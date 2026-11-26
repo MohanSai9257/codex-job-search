@@ -1,0 +1,22 @@
+node_modules/
+dist/
+
+# Local job-search state and private uploads
+data/*.sqlite
+data/*.sqlite-*
+data/excel/
+data/resumes/
+backups/
+
+# Generated exports and working files
+outputs/
+work/
+
+# Local environment and editor files
+.env
+.env.*
+!.env.example
+.DS_Store
+.idea/
+.vscode/
+
