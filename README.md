@@ -1,10 +1,10 @@
 # Local Job Search
 
-A local React dashboard and SQLite-backed sequential job search. No API key or cloud database is required. The job board adapters use public Greenhouse, Lever, and SmartRecruiters feeds. Other platforms need a new authorized adapter; failed sites are reported honestly.
+A local React dashboard and SQLite-backed sequential job search. No API key or cloud database is required. The job board adapters use public Greenhouse, Lever, SmartRecruiters, and Workday career feeds. Other platforms need a new authorized adapter; failed sites are reported honestly.
 
 ## Run locally
 
-Requires Node.js 20+.
+Requires Node.js 20+ and `curl` for Workday career feeds.
 
 ```bash
 git clone YOUR_REPOSITORY_URL
@@ -38,4 +38,4 @@ Use `./scripts-backup.sh` to create a SQLite backup. Stop the app and run `./scr
 
 ## Current coverage
 
-Greenhouse, Lever, and SmartRecruiters public feeds are implemented. Workday, iCIMS, Oracle, SAP SuccessFactors, Phenom, and custom sites require board-specific access and are marked failed until an authorized adapter is available. The dashboard currently supports basic job filtering and export. Job closure verification and fully automated official URL discovery need source-specific adapters. These limits prevent fabricated results.
+Greenhouse, Lever, SmartRecruiters, and Workday technology searches are implemented. iCIMS, Oracle, SAP SuccessFactors, Phenom, and custom sites require board-specific access and are marked failed until an authorized adapter is available. Workday searches currently target common cloud, platform, infrastructure, Kubernetes, Terraform, automation, and DevOps terms. The dashboard supports basic job filtering and export. Job closure verification and fully automated official URL discovery need source-specific adapters.

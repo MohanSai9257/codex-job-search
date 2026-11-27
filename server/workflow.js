@@ -174,7 +174,11 @@ export function processJob(runId, companyRun, job) {
         `INSERT INTO jobs(company_id,job_key,title,location,url,apply_url,description,req_id,posted_at,salary,employment_type,work_mode,required_years,sponsorship,sponsorship_quote)
          VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
          ON CONFLICT(company_id,job_key) DO UPDATE SET
-           title=excluded.title,location=excluded.location,description=excluded.description,
+           title=excluded.title,location=excluded.location,url=excluded.url,
+           apply_url=excluded.apply_url,description=excluded.description,
+           req_id=excluded.req_id,posted_at=excluded.posted_at,salary=excluded.salary,
+           employment_type=excluded.employment_type,work_mode=excluded.work_mode,
+           required_years=excluded.required_years,
            last_seen_at=CURRENT_TIMESTAMP,sponsorship=excluded.sponsorship,
            sponsorship_quote=excluded.sponsorship_quote`
       ).run(
